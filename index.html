@@ -14,6 +14,8 @@
       box-shadow:0 2px 5px rgba(0,0,0,0.1);
     }
     h1, h2 { margin:0 0 10px; }
+    .case { margin-bottom:18px; padding-bottom:10px; border-bottom:1px solid #eee; }
+    .case:last-child { border-bottom:none; }
   </style>
 </head>
 
@@ -45,12 +47,90 @@
     </ul>
   </div>
 
+  <!-- ✅ REPLACED CASE STUDY SECTION -->
   <div class="card">
-    <h2>Case Study: HDMI No Display Issue</h2>
-    <p><b>Problem:</b> HDMI requires replug to display.</p>
-    <p><b>Diagnosis:</b> Isolated to HDMI handshake issue.</p>
-    <p><b>Solution:</b> Adjusted configuration and tested signal path.</p>
-    <p><b>Result:</b> Stable display without replugging.</p>
+    <h2>Case Studies (Top 10 IT Incidents)</h2>
+
+    <div class="case">
+      <p><b>1. Starlink Shared IP Piracy Investigation</b></p>
+      <p><b>Problem:</b> Unauthorized BitTorrent activity detected on shared NAT IP.</p>
+      <p><b>Diagnosis:</b> NAT limitation required DHCP and traffic correlation analysis.</p>
+      <p><b>Solution:</b> Analyzed logs, MAC mapping, and session timing patterns.</p>
+      <p><b>Result:</b> Identified probable source devices and improved forensic method.</p>
+    </div>
+
+    <div class="case">
+      <p><b>2. Phishing Credential Attack Detection</b></p>
+      <p><b>Problem:</b> User targeted by fake login page.</p>
+      <p><b>Diagnosis:</b> Domain spoofing and SSL mismatch detected.</p>
+      <p><b>Solution:</b> Blocked domain and performed endpoint inspection.</p>
+      <p><b>Result:</b> Prevented credential compromise.</p>
+    </div>
+
+    <div class="case">
+      <p><b>3. Ransomware Prevention Strategy Design</b></p>
+      <p><b>Problem:</b> No ransomware protection framework.</p>
+      <p><b>Diagnosis:</b> Weak backup and access control system.</p>
+      <p><b>Solution:</b> Designed layered security + backup strategy.</p>
+      <p><b>Result:</b> Improved disaster recovery readiness.</p>
+    </div>
+
+    <div class="case">
+      <p><b>4. USB Malware Containment Policy</b></p>
+      <p><b>Problem:</b> Risk of malware via USB devices.</p>
+      <p><b>Diagnosis:</b> Autorun enabled across endpoints.</p>
+      <p><b>Solution:</b> Disabled autorun via Group Policy.</p>
+      <p><b>Result:</b> Reduced external infection risk.</p>
+    </div>
+
+    <div class="case">
+      <p><b>5. Office IP Conflict Issue</b></p>
+      <p><b>Problem:</b> Network instability and random disconnects.</p>
+      <p><b>Diagnosis:</b> Duplicate IP assignments in DHCP range.</p>
+      <p><b>Solution:</b> Reconfigured DHCP and reserved static IPs.</p>
+      <p><b>Result:</b> Stabilized office network.</p>
+    </div>
+
+    <div class="case">
+      <p><b>6. LAN File Transfer Bottleneck</b></p>
+      <p><b>Problem:</b> Slow internal file transfer speeds.</p>
+      <p><b>Diagnosis:</b> Faulty Ethernet cables and switch limitations.</p>
+      <p><b>Solution:</b> Replaced cables and optimized switch ports.</p>
+      <p><b>Result:</b> Improved LAN throughput.</p>
+    </div>
+
+    <div class="case">
+      <p><b>7. Windows Boot “Getting Ready” Delay</b></p>
+      <p><b>Problem:</b> System stuck during boot process.</p>
+      <p><b>Diagnosis:</b> Corrupted Windows update cycle.</p>
+      <p><b>Solution:</b> Reset update services and cleared cache.</p>
+      <p><b>Result:</b> Restored normal boot performance.</p>
+    </div>
+
+    <div class="case">
+      <p><b>8. Fast Startup Hardware Failure</b></p>
+      <p><b>Problem:</b> Devices not detected after boot.</p>
+      <p><b>Diagnosis:</b> Fast Startup blocking full hardware initialization.</p>
+      <p><b>Solution:</b> Disabled Fast Startup feature.</p>
+      <p><b>Result:</b> Fixed hardware detection inconsistency.</p>
+    </div>
+
+    <div class="case">
+      <p><b>9. Robocopy Automated Backup System</b></p>
+      <p><b>Problem:</b> No automated backup system.</p>
+      <p><b>Diagnosis:</b> Manual backup process unreliable.</p>
+      <p><b>Solution:</b> Implemented scheduled Robocopy batch script with logging.</p>
+      <p><b>Result:</b> Continuous automated backup with audit trail.</p>
+    </div>
+
+    <div class="case">
+      <p><b>10. Auto Drive Mapping System</b></p>
+      <p><b>Problem:</b> Users manually mapping network drives.</p>
+      <p><b>Diagnosis:</b> No login automation script.</p>
+      <p><b>Solution:</b> Created batch script for automatic drive mapping.</p>
+      <p><b>Result:</b> Reduced IT workload and improved efficiency.</p>
+    </div>
+
   </div>
 
   <div class="card">
