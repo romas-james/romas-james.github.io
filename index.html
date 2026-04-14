@@ -1,146 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IT Technician Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
-    :root {
-      --bg: #f4f4f4;
-      --card: #ffffff;
-      --text: #333;
-      --accent: #007bff;
+    body { 
+      font-family: Arial; 
+      background:#f4f6f9; 
+      margin:0; 
     }
 
-    body.dark {
-      --bg: #0f172a;
-      --card: #1e293b;
-      --text: #e2e8f0;
-      --accent: #38bdf8;
-    }
-
-    body {
-      font-family: 'Segoe UI', Arial;
-      background: var(--bg);
-      color: var(--text);
-      margin: 0;
-      background: #0f172a;
-      color: #e2e8f0;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1100px;
-      margin: auto;
-      transition: 0.3s;
-    }
-
-    header {
-      background: #020617;
-      padding: 15px 0;
-      background: var(--card);
-      padding: 15px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 1px solid #1e293b;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 20px;
-    .container {
-      width: 90%;
-      max-width: 1000px;
-      margin: auto;
+    .container { 
+      width:90%; 
+      max-width:1000px; 
+      margin:auto; 
     }
 
     .card {
-      background: #1e293b;
-      background: var(--card);
-      padding: 20px;
-      margin: 20px 0;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      transition: 0.3s;
+      background:white;
+      padding:20px;
+      margin:20px 0;
+      border-radius:12px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.08);
+      transition:0.3s;
     }
 
-@@ -46,194 +59,183 @@
+    .card:hover {
+      transform:translateY(-3px);
     }
 
-    h1, h2 {
-      color: #38bdf8;
-      margin-bottom: 10px;
+    h1, h2 { margin-bottom:10px; }
+
+    /* SKILLS TAG STYLE */
+    .skills span {
+      display:inline-block;
+      background:#007bff;
+      color:white;
+      padding:6px 10px;
+      border-radius:20px;
+      margin:5px 5px 0 0;
+      font-size:12px;
     }
 
-    ul {
-      padding-left: 20px;
-    }
-
-    /* GRID FOR CASE STUDIES */
-    .case-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 15px;
-    button {
-      padding: 8px 12px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      background: var(--accent);
-      color: white;
-    }
-
+    /* CASE STUDY */
     .case {
-      background: #020617;
-      padding: 15px;
-      border-radius: 10px;
-      transition: 0.3s;
-      border: 1px solid #1e293b;
+      margin-bottom:10px;
+      border-radius:8px;
+      overflow:hidden;
+      border:1px solid #eee;
     }
 
-    .case:hover {
-      border-color: #38bdf8;
-      transform: scale(1.02);
-      margin-bottom: 15px;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 10px;
+    .case-header {
+      padding:12px;
+      background:#f1f3f5;
+      cursor:pointer;
+      font-weight:bold;
     }
 
-    .case p {
-      margin: 5px 0;
-      font-size: 14px;
-    .case h3 {
-      cursor: pointer;
-      color: var(--accent);
-    }
-
-    .tag {
-      display: inline-block;
-      background: #38bdf8;
-      color: #020617;
-      padding: 3px 8px;
-      border-radius: 6px;
-      font-size: 12px;
-      margin-bottom: 8px;
     .case-content {
-      display: none;
-      margin-top: 8px;
+      display:none;
+      padding:12px;
+      background:white;
+      font-size:14px;
     }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #94a3b8;
-    .case.active .case-content {
-      display: block;
+    /* SEARCH BAR */
+    .search-box {
+      width:100%;
+      padding:10px;
+      margin-bottom:10px;
+      border-radius:8px;
+      border:1px solid #ccc;
     }
 
-    a {
-      color: #38bdf8;
-      text-decoration: none;
+    /* DARK MODE BUTTON */
+    .toggle-btn {
+      position:fixed;
+      top:10px;
+      right:10px;
+      padding:10px 15px;
+      background:#333;
+      color:white;
+      border:none;
+      border-radius:8px;
+      cursor:pointer;
+    }
+
+    /* DARK MODE */
+    .dark {
+      background:#1e1e1e;
+      color:#ddd;
+    }
+
+    .dark .card {
+      background:#2a2a2a;
+    }
+
+    .dark .case-header {
+      background:#333;
     }
 
   </style>
@@ -148,14 +106,7 @@
 
 <body>
 
-<header>
-  <div class="container">
-    <h1>IT Support / Technician Portfolio</h1>
-  </div>
-<header class="container">
-  <h2>My IT Portfolio</h2>
-  <button onclick="toggleDark()">🌙 Toggle Mode</button>
-</header>
+<button class="toggle-btn" onclick="toggleDarkMode()">Toggle Dark</button>
 
 <div class="container">
 
@@ -168,228 +119,96 @@
     <h2>About Me</h2>
     <p>
       I specialize in diagnosing hardware/software issues, maintaining network stability,
-      and implementing solutions that reduce downtime. Focused on real-world IT operations,
-      automation, and system reliability.
       and implementing solutions that reduce downtime.
     </p>
   </div>
 
   <div class="card">
     <h2>Technical Skills</h2>
-    <ul>
-      <li>PC Repair & Troubleshooting</li>
-      <li>Windows System Optimization</li>
-      <li>Windows Installation & Optimization</li>
-      <li>Networking (DHCP, IP Configuration)</li>
-      <li>Remote Support (AnyDesk, RustDesk)</li>
-      <li>Automation (Batch Scripts, Robocopy)</li>
-    </ul>
+    <div class="skills">
+      <span>PC Repair</span>
+      <span>Windows OS</span>
+      <span>Networking</span>
+      <span>Remote Support</span>
+      <span>Automation</span>
+    </div>
   </div>
 
   <div class="card">
-    <h2>Case Studies (Top 10 IT Incidents)</h2>
+    <h2>Case Studies</h2>
 
-    <div class="case-grid">
+    <input type="text" class="search-box" placeholder="Search case..." onkeyup="filterCases(this.value)">
+
+    <div id="cases">
 
       <div class="case">
-        <span class="tag">Security</span>
-        <p><b>Starlink Piracy Investigation</b></p>
-        <p><b>Problem:</b> Torrent activity on shared IP</p>
-        <p><b>Diagnosis:</b> NAT log correlation</p>
-        <p><b>Solution:</b> DHCP + MAC tracing</p>
-        <p><b>Result:</b> Identified source devices</p>
-    <h2>Case Studies (Click to Expand)</h2>
-
-    <!-- CASE TEMPLATE -->
-    <div class="case">
-      <h3 onclick="toggleCase(this)">1. Starlink Shared IP Piracy Investigation</h3>
-      <div class="case-content">
-        <p><b>Problem:</b> Unauthorized BitTorrent activity detected on a shared Starlink NAT public IP used by multiple devices.</p>
-        <p><b>Diagnosis:</b> Identified NAT limitation preventing direct IP-to-device attribution. Correlated DHCP logs, router connection tables, and time-based traffic patterns.</p>
-        <p><b>Solution:</b> Performed structured network forensics using MAC mapping and session timing analysis.</p>
-        <p><b>Result:</b> Narrowed down probable source devices and improved investigation process.</p>
+        <div class="case-header" onclick="toggleCase(this)">1. Starlink Shared IP Piracy Investigation</div>
+        <div class="case-content">
+          Problem: Unauthorized BitTorrent activity detected.<br>
+          Diagnosis: NAT limitation + DHCP correlation.<br>
+          Solution: Log + MAC analysis.<br>
+          Result: Identified source devices.
+        </div>
       </div>
-    </div>
 
       <div class="case">
-        <span class="tag">Security</span>
-        <p><b>Phishing Detection</b></p>
-        <p><b>Problem:</b> Fake login page</p>
-        <p><b>Diagnosis:</b> Domain spoofing</p>
-        <p><b>Solution:</b> Blocked + scanned system</p>
-        <p><b>Result:</b> Prevented compromise</p>
-    <div class="case">
-      <h3 onclick="toggleCase(this)">2. Phishing Credential Harvesting Detection</h3>
-      <div class="case-content">
-        <p><b>Problem:</b> User received phishing login page.</p>
-        <p><b>Diagnosis:</b> Domain spoofing and SSL mismatch detected.</p>
-        <p><b>Solution:</b> Blocked domain and performed endpoint inspection.</p>
-        <p><b>Result:</b> Prevented credential compromise.</p>
+        <div class="case-header" onclick="toggleCase(this)">2. Phishing Credential Attack</div>
+        <div class="case-content">
+          Problem: Fake login page.<br>
+          Diagnosis: Domain spoofing.<br>
+          Solution: Block + endpoint scan.<br>
+          Result: Prevented compromise.
+        </div>
       </div>
-    </div>
 
       <div class="case">
-        <span class="tag">Security</span>
-        <p><b>Ransomware Prevention</b></p>
-        <p><b>Problem:</b> No protection system</p>
-        <p><b>Diagnosis:</b> Weak backup structure</p>
-        <p><b>Solution:</b> Backup + access control</p>
-        <p><b>Result:</b> Recovery-ready system</p>
-    <div class="case">
-      <h3 onclick="toggleCase(this)">3. Ransomware Prevention Strategy Design</h3>
-      <div class="case-content">
-        <p><b>Problem:</b> No ransomware protection in place.</p>
-        <p><b>Diagnosis:</b> Weak backup and access control system.</p>
-        <p><b>Solution:</b> Implemented layered defense and backup strategy.</p>
-        <p><b>Result:</b> Improved recovery readiness.</p>
-      </div>
-    </div>
-
-      <div class="case">
-        <span class="tag">Security</span>
-        <p><b>USB Malware Control</b></p>
-        <p><b>Problem:</b> External device risk</p>
-        <p><b>Diagnosis:</b> Autorun enabled</p>
-        <p><b>Solution:</b> Group Policy restriction</p>
-        <p><b>Result:</b> Reduced infection risk</p>
-    <div class="case">
-      <h3 onclick="toggleCase(this)">4. USB Malware Containment Policy</h3>
-      <div class="case-content">
-        <p><b>Problem:</b> Risk of infection via USB devices.</p>
-        <p><b>Diagnosis:</b> Autorun enabled across systems.</p>
-        <p><b>Solution:</b> Disabled autorun via policy.</p>
-        <p><b>Result:</b> Reduced malware risk.</p>
-      </div>
-    </div>
-
-      <div class="case">
-        <span class="tag">Network</span>
-        <p><b>IP Conflict Issue</b></p>
-        <p><b>Problem:</b> Random disconnects</p>
-        <p><b>Diagnosis:</b> Duplicate IPs</p>
-        <p><b>Solution:</b> DHCP reconfiguration</p>
-        <p><b>Result:</b> Stable network</p>
-    <div class="case">
-      <h3 onclick="toggleCase(this)">5. IP Conflict Network Issue</h3>
-      <div class="case-content">
-        <p><b>Problem:</b> Random network disconnections.</p>
-        <p><b>Diagnosis:</b> Duplicate IP addresses detected.</p>
-        <p><b>Solution:</b> Reconfigured DHCP and assigned static IPs.</p>
-        <p><b>Result:</b> Stable network restored.</p>
-      </div>
-    </div>
-
-      <div class="case">
-        <span class="tag">Network</span>
-        <p><b>LAN Bottleneck</b></p>
-        <p><b>Problem:</b> Slow transfers</p>
-        <p><b>Diagnosis:</b> Cable + switch issue</p>
-        <p><b>Solution:</b> Replaced hardware</p>
-        <p><b>Result:</b> Improved speed</p>
-    <div class="case">
-      <h3 onclick="toggleCase(this)">6. LAN Transfer Bottleneck</h3>
-      <div class="case-content">
-        <p><b>Problem:</b> Slow file transfers.</p>
-        <p><b>Diagnosis:</b> Faulty cables and switch limitations.</p>
-        <p><b>Solution:</b> Replaced cables and optimized ports.</p>
-        <p><b>Result:</b> Improved speed.</p>
-      </div>
-    </div>
-
-      <div class="case">
-        <span class="tag">System</span>
-        <p><b>Windows Boot Delay</b></p>
-        <p><b>Problem:</b> Stuck on update</p>
-        <p><b>Diagnosis:</b> Corrupt update</p>
-        <p><b>Solution:</b> Reset services</p>
-        <p><b>Result:</b> Normal boot</p>
-    <div class="case">
-      <h3 onclick="toggleCase(this)">7. Windows Boot Delay Issue</h3>
-      <div class="case-content">
-        <p><b>Problem:</b> System stuck on "Getting Ready".</p>
-        <p><b>Diagnosis:</b> Corrupted update process.</p>
-        <p><b>Solution:</b> Reset update services.</p>
-        <p><b>Result:</b> Normal boot restored.</p>
-      </div>
-    </div>
-
-      <div class="case">
-        <span class="tag">System</span>
-        <p><b>Fast Startup Issue</b></p>
-        <p><b>Problem:</b> Hardware not detected</p>
-        <p><b>Diagnosis:</b> Incomplete boot state</p>
-        <p><b>Solution:</b> Disabled feature</p>
-        <p><b>Result:</b> Fixed detection</p>
-    <div class="case">
-      <h3 onclick="toggleCase(this)">8. Fast Startup Hardware Issue</h3>
-      <div class="case-content">
-        <p><b>Problem:</b> Devices not detected.</p>
-        <p><b>Diagnosis:</b> Fast Startup blocking initialization.</p>
-        <p><b>Solution:</b> Disabled feature.</p>
-        <p><b>Result:</b> Hardware detection fixed.</p>
-      </div>
-    </div>
-
-      <div class="case">
-        <span class="tag">Automation</span>
-        <p><b>Robocopy Backup</b></p>
-        <p><b>Problem:</b> No backup system</p>
-        <p><b>Diagnosis:</b> Manual process</p>
-        <p><b>Solution:</b> Automated script</p>
-        <p><b>Result:</b> Continuous backup</p>
-    <div class="case">
-      <h3 onclick="toggleCase(this)">9. Robocopy Backup Automation</h3>
-      <div class="case-content">
-        <p><b>Problem:</b> No backup system.</p>
-        <p><b>Diagnosis:</b> Manual process unreliable.</p>
-        <p><b>Solution:</b> Scheduled robocopy script.</p>
-        <p><b>Result:</b> Automated backups with logs.</p>
-      </div>
-    </div>
-
-      <div class="case">
-        <span class="tag">Automation</span>
-        <p><b>Drive Mapping Script</b></p>
-        <p><b>Problem:</b> Manual mapping</p>
-        <p><b>Diagnosis:</b> No automation</p>
-        <p><b>Solution:</b> Login script</p>
-        <p><b>Result:</b> Improved efficiency</p>
-    <div class="case">
-      <h3 onclick="toggleCase(this)">10. Auto Drive Mapping Script</h3>
-      <div class="case-content">
-        <p><b>Problem:</b> Manual drive mapping.</p>
-        <p><b>Diagnosis:</b> No login automation.</p>
-        <p><b>Solution:</b> Created batch script.</p>
-        <p><b>Result:</b> Improved efficiency.</p>
+        <div class="case-header" onclick="toggleCase(this)">3. Ransomware Prevention Design</div>
+        <div class="case-content">
+          Problem: No protection framework.<br>
+          Diagnosis: Weak backup.<br>
+          Solution: Layered security.<br>
+          Result: Improved DR readiness.
+        </div>
       </div>
 
     </div>
-
   </div>
 
   <div class="card">
     <h2>Projects</h2>
-    <p><b>IT Equipment Tracking System</b> - Excel-based tracking with QR integration.</p>
-    <p><b>Automated Backup Script</b> - Robocopy backup every 10 minutes.</p>
+    <p><b>IT Equipment Tracking System</b> - QR-based asset tracking</p>
+    <p><b>Automated Backup Script</b> - Robocopy automation</p>
   </div>
 
   <div class="card">
-@@ -244,9 +246,16 @@ <h2>Contact</h2>
+    <h2>Contact</h2>
+    <p>Email: your@email.com</p>
+    <p>Phone: +63 XXX XXX XXXX</p>
+  </div>
 
 </div>
 
-<footer>
-  <p>© 2026 IT Portfolio | Built with GitHub Pages</p>
-</footer>
 <script>
-function toggleDark() {
+
+function toggleCase(header) {
+  const content = header.nextElementSibling;
+  content.style.display = content.style.display === "block" ? "none" : "block";
+}
+
+function filterCases(input) {
+  const cases = document.querySelectorAll(".case");
+  input = input.toLowerCase();
+
+  cases.forEach(c => {
+    const text = c.innerText.toLowerCase();
+    c.style.display = text.includes(input) ? "block" : "none";
+  });
+}
+
+function toggleDarkMode() {
   document.body.classList.toggle("dark");
 }
 
-function toggleCase(element) {
-  const parent = element.parentElement;
-  parent.classList.toggle("active");
-}
 </script>
 
 </body>
