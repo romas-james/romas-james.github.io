@@ -188,101 +188,196 @@
 
   <div class="card">
     <h2>Case Studies (Top 10 IT Incidents)</h2>
-    
-  <div class="case-grid">
-      
+
+    <div class="case-grid">
+
+      <div class="case">
+        <span class="tag">Security</span>
+        <p><b>Starlink Piracy Investigation</b></p>
+        <p><b>Problem:</b> Torrent activity on shared IP</p>
+        <p><b>Diagnosis:</b> NAT log correlation</p>
+        <p><b>Solution:</b> DHCP + MAC tracing</p>
+        <p><b>Result:</b> Identified source devices</p>
+    <h2>Case Studies (Click to Expand)</h2>
+
+    <!-- CASE TEMPLATE -->
     <div class="case">
-      <p><b>1. Starlink Shared IP Piracy Investigation</b></p>
-      <p><b>Problem:</b> Unauthorized BitTorrent activity detected on shared NAT IP.</p>
-      <p><b>Diagnosis:</b> NAT limitation required DHCP and traffic correlation analysis.</p>
-      <p><b>Solution:</b> Analyzed logs, MAC mapping, and session timing patterns.</p>
-      <p><b>Result:</b> Identified probable source devices and improved forensic method.</p>
+      <h3 onclick="toggleCase(this)">1. Starlink Shared IP Piracy Investigation</h3>
+      <div class="case-content">
+        <p><b>Problem:</b> Unauthorized BitTorrent activity detected on a shared Starlink NAT public IP used by multiple devices.</p>
+        <p><b>Diagnosis:</b> Identified NAT limitation preventing direct IP-to-device attribution. Correlated DHCP logs, router connection tables, and time-based traffic patterns.</p>
+        <p><b>Solution:</b> Performed structured network forensics using MAC mapping and session timing analysis.</p>
+        <p><b>Result:</b> Narrowed down probable source devices and improved investigation process.</p>
+      </div>
     </div>
 
+      <div class="case">
+        <span class="tag">Security</span>
+        <p><b>Phishing Detection</b></p>
+        <p><b>Problem:</b> Fake login page</p>
+        <p><b>Diagnosis:</b> Domain spoofing</p>
+        <p><b>Solution:</b> Blocked + scanned system</p>
+        <p><b>Result:</b> Prevented compromise</p>
     <div class="case">
-      <p><b>2. Phishing Credential Attack Detection</b></p>
-      <p><b>Problem:</b> User targeted by fake login page.</p>
-      <p><b>Diagnosis:</b> Domain spoofing and SSL mismatch detected.</p>
-      <p><b>Solution:</b> Blocked domain and performed endpoint inspection.</p>
-      <p><b>Result:</b> Prevented credential compromise.</p>
+      <h3 onclick="toggleCase(this)">2. Phishing Credential Harvesting Detection</h3>
+      <div class="case-content">
+        <p><b>Problem:</b> User received phishing login page.</p>
+        <p><b>Diagnosis:</b> Domain spoofing and SSL mismatch detected.</p>
+        <p><b>Solution:</b> Blocked domain and performed endpoint inspection.</p>
+        <p><b>Result:</b> Prevented credential compromise.</p>
+      </div>
     </div>
 
+      <div class="case">
+        <span class="tag">Security</span>
+        <p><b>Ransomware Prevention</b></p>
+        <p><b>Problem:</b> No protection system</p>
+        <p><b>Diagnosis:</b> Weak backup structure</p>
+        <p><b>Solution:</b> Backup + access control</p>
+        <p><b>Result:</b> Recovery-ready system</p>
     <div class="case">
-      <p><b>3. Ransomware Prevention Strategy Design</b></p>
-      <p><b>Problem:</b> No ransomware protection framework.</p>
-      <p><b>Diagnosis:</b> Weak backup and access control system.</p>
-      <p><b>Solution:</b> Designed layered security + backup strategy.</p>
-      <p><b>Result:</b> Improved disaster recovery readiness.</p>
+      <h3 onclick="toggleCase(this)">3. Ransomware Prevention Strategy Design</h3>
+      <div class="case-content">
+        <p><b>Problem:</b> No ransomware protection in place.</p>
+        <p><b>Diagnosis:</b> Weak backup and access control system.</p>
+        <p><b>Solution:</b> Implemented layered defense and backup strategy.</p>
+        <p><b>Result:</b> Improved recovery readiness.</p>
+      </div>
     </div>
 
+      <div class="case">
+        <span class="tag">Security</span>
+        <p><b>USB Malware Control</b></p>
+        <p><b>Problem:</b> External device risk</p>
+        <p><b>Diagnosis:</b> Autorun enabled</p>
+        <p><b>Solution:</b> Group Policy restriction</p>
+        <p><b>Result:</b> Reduced infection risk</p>
     <div class="case">
-      <p><b>4. USB Malware Containment Policy</b></p>
-      <p><b>Problem:</b> Risk of malware via USB devices.</p>
-      <p><b>Diagnosis:</b> Autorun enabled across endpoints.</p>
-      <p><b>Solution:</b> Disabled autorun via Group Policy.</p>
-      <p><b>Result:</b> Reduced external infection risk.</p>
+      <h3 onclick="toggleCase(this)">4. USB Malware Containment Policy</h3>
+      <div class="case-content">
+        <p><b>Problem:</b> Risk of infection via USB devices.</p>
+        <p><b>Diagnosis:</b> Autorun enabled across systems.</p>
+        <p><b>Solution:</b> Disabled autorun via policy.</p>
+        <p><b>Result:</b> Reduced malware risk.</p>
+      </div>
     </div>
 
+      <div class="case">
+        <span class="tag">Network</span>
+        <p><b>IP Conflict Issue</b></p>
+        <p><b>Problem:</b> Random disconnects</p>
+        <p><b>Diagnosis:</b> Duplicate IPs</p>
+        <p><b>Solution:</b> DHCP reconfiguration</p>
+        <p><b>Result:</b> Stable network</p>
     <div class="case">
-      <p><b>5. Office IP Conflict Issue</b></p>
-      <p><b>Problem:</b> Network instability and random disconnects.</p>
-      <p><b>Diagnosis:</b> Duplicate IP assignments in DHCP range.</p>
-      <p><b>Solution:</b> Reconfigured DHCP and reserved static IPs.</p>
-      <p><b>Result:</b> Stabilized office network.</p>
+      <h3 onclick="toggleCase(this)">5. IP Conflict Network Issue</h3>
+      <div class="case-content">
+        <p><b>Problem:</b> Random network disconnections.</p>
+        <p><b>Diagnosis:</b> Duplicate IP addresses detected.</p>
+        <p><b>Solution:</b> Reconfigured DHCP and assigned static IPs.</p>
+        <p><b>Result:</b> Stable network restored.</p>
+      </div>
     </div>
 
+      <div class="case">
+        <span class="tag">Network</span>
+        <p><b>LAN Bottleneck</b></p>
+        <p><b>Problem:</b> Slow transfers</p>
+        <p><b>Diagnosis:</b> Cable + switch issue</p>
+        <p><b>Solution:</b> Replaced hardware</p>
+        <p><b>Result:</b> Improved speed</p>
     <div class="case">
-      <p><b>6. LAN File Transfer Bottleneck</b></p>
-      <p><b>Problem:</b> Slow internal file transfer speeds.</p>
-      <p><b>Diagnosis:</b> Faulty Ethernet cables and switch limitations.</p>
-      <p><b>Solution:</b> Replaced cables and optimized switch ports.</p>
-      <p><b>Result:</b> Improved LAN throughput.</p>
+      <h3 onclick="toggleCase(this)">6. LAN Transfer Bottleneck</h3>
+      <div class="case-content">
+        <p><b>Problem:</b> Slow file transfers.</p>
+        <p><b>Diagnosis:</b> Faulty cables and switch limitations.</p>
+        <p><b>Solution:</b> Replaced cables and optimized ports.</p>
+        <p><b>Result:</b> Improved speed.</p>
+      </div>
     </div>
 
+      <div class="case">
+        <span class="tag">System</span>
+        <p><b>Windows Boot Delay</b></p>
+        <p><b>Problem:</b> Stuck on update</p>
+        <p><b>Diagnosis:</b> Corrupt update</p>
+        <p><b>Solution:</b> Reset services</p>
+        <p><b>Result:</b> Normal boot</p>
     <div class="case">
-      <p><b>7. Windows Boot “Getting Ready” Delay</b></p>
-      <p><b>Problem:</b> System stuck during boot process.</p>
-      <p><b>Diagnosis:</b> Corrupted Windows update cycle.</p>
-      <p><b>Solution:</b> Reset update services and cleared cache.</p>
-      <p><b>Result:</b> Restored normal boot performance.</p>
+      <h3 onclick="toggleCase(this)">7. Windows Boot Delay Issue</h3>
+      <div class="case-content">
+        <p><b>Problem:</b> System stuck on "Getting Ready".</p>
+        <p><b>Diagnosis:</b> Corrupted update process.</p>
+        <p><b>Solution:</b> Reset update services.</p>
+        <p><b>Result:</b> Normal boot restored.</p>
+      </div>
     </div>
 
+      <div class="case">
+        <span class="tag">System</span>
+        <p><b>Fast Startup Issue</b></p>
+        <p><b>Problem:</b> Hardware not detected</p>
+        <p><b>Diagnosis:</b> Incomplete boot state</p>
+        <p><b>Solution:</b> Disabled feature</p>
+        <p><b>Result:</b> Fixed detection</p>
     <div class="case">
-      <p><b>8. Fast Startup Hardware Failure</b></p>
-      <p><b>Problem:</b> Devices not detected after boot.</p>
-      <p><b>Diagnosis:</b> Fast Startup blocking full hardware initialization.</p>
-      <p><b>Solution:</b> Disabled Fast Startup feature.</p>
-      <p><b>Result:</b> Fixed hardware detection inconsistency.</p>
+      <h3 onclick="toggleCase(this)">8. Fast Startup Hardware Issue</h3>
+      <div class="case-content">
+        <p><b>Problem:</b> Devices not detected.</p>
+        <p><b>Diagnosis:</b> Fast Startup blocking initialization.</p>
+        <p><b>Solution:</b> Disabled feature.</p>
+        <p><b>Result:</b> Hardware detection fixed.</p>
+      </div>
     </div>
 
+      <div class="case">
+        <span class="tag">Automation</span>
+        <p><b>Robocopy Backup</b></p>
+        <p><b>Problem:</b> No backup system</p>
+        <p><b>Diagnosis:</b> Manual process</p>
+        <p><b>Solution:</b> Automated script</p>
+        <p><b>Result:</b> Continuous backup</p>
     <div class="case">
-      <p><b>9. Robocopy Automated Backup System</b></p>
-      <p><b>Problem:</b> No automated backup system.</p>
-      <p><b>Diagnosis:</b> Manual backup process unreliable.</p>
-      <p><b>Solution:</b> Implemented scheduled Robocopy batch script with logging.</p>
-      <p><b>Result:</b> Continuous automated backup with audit trail.</p>
+      <h3 onclick="toggleCase(this)">9. Robocopy Backup Automation</h3>
+      <div class="case-content">
+        <p><b>Problem:</b> No backup system.</p>
+        <p><b>Diagnosis:</b> Manual process unreliable.</p>
+        <p><b>Solution:</b> Scheduled robocopy script.</p>
+        <p><b>Result:</b> Automated backups with logs.</p>
+      </div>
     </div>
 
+      <div class="case">
+        <span class="tag">Automation</span>
+        <p><b>Drive Mapping Script</b></p>
+        <p><b>Problem:</b> Manual mapping</p>
+        <p><b>Diagnosis:</b> No automation</p>
+        <p><b>Solution:</b> Login script</p>
+        <p><b>Result:</b> Improved efficiency</p>
     <div class="case">
-      <p><b>10. Auto Drive Mapping System</b></p>
-      <p><b>Problem:</b> Users manually mapping network drives.</p>
-      <p><b>Diagnosis:</b> No login automation script.</p>
-      <p><b>Solution:</b> Created batch script for automatic drive mapping.</p>
-      <p><b>Result:</b> Reduced IT workload and improved efficiency.</p>
+      <h3 onclick="toggleCase(this)">10. Auto Drive Mapping Script</h3>
+      <div class="case-content">
+        <p><b>Problem:</b> Manual drive mapping.</p>
+        <p><b>Diagnosis:</b> No login automation.</p>
+        <p><b>Solution:</b> Created batch script.</p>
+        <p><b>Result:</b> Improved efficiency.</p>
+      </div>
+
     </div>
-    
+
   </div>
-  </div>
-  
+
   <div class="card">
     <h2>Projects</h2>
+    <p><b>IT Equipment Tracking System</b> - Excel-based QR tracking system</p>
+    <p><b>Automated Backup Script</b> - Robocopy scheduled system</p>
     <p><b>IT Equipment Tracking System</b> - Excel-based tracking with QR integration.</p>
     <p><b>Automated Backup Script</b> - Robocopy backup every 10 minutes.</p>
   </div>
 
   <div class="card">
-<h2>Contact</h2>
-@@ -244,9 +246,16 @@ 
+@@ -244,9 +246,16 @@ <h2>Contact</h2>
+
 </div>
 
 <footer>
