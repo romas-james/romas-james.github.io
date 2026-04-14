@@ -1,12 +1,24 @@
-<head>
-  <title>IT Technician Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
-    body { font-family: Arial; background:#f4f4f4; margin:0; }
-    .container { width:90%; max-width:900px; margin:auto; }
+    :root {
+      --bg: #f4f4f4;
+      --card: #ffffff;
+      --text: #333;
+      --accent: #007bff;
+    }
+
+    body.dark {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --text: #e2e8f0;
+      --accent: #38bdf8;
+    }
+
     body {
       font-family: 'Segoe UI', Arial;
+      background: var(--bg);
+      color: var(--text);
       margin: 0;
       background: #0f172a;
       color: #e2e8f0;
@@ -16,42 +28,51 @@
       width: 90%;
       max-width: 1100px;
       margin: auto;
+      transition: 0.3s;
     }
 
     header {
       background: #020617;
       padding: 15px 0;
+      background: var(--card);
+      padding: 15px;
       position: sticky;
       top: 0;
       z-index: 1000;
       border-bottom: 1px solid #1e293b;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     header h1 {
       margin: 0;
       font-size: 20px;
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: auto;
     }
 
     .card {
-      background:white;
-      padding:20px;
-      margin:20px 0;
-      border-radius:10px;
-      box-shadow:0 2px 5px rgba(0,0,0,0.1);
       background: #1e293b;
+      background: var(--card);
       padding: 20px;
       margin: 20px 0;
       border-radius: 12px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
       transition: 0.3s;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
+@@ -46,194 +59,183 @@
     }
 
     h1, h2 {
       color: #38bdf8;
+      margin-bottom: 10px;
     }
 
     ul {
@@ -63,6 +84,13 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 15px;
+    button {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background: var(--accent);
+      color: white;
     }
 
     .case {
@@ -76,11 +104,17 @@
     .case:hover {
       border-color: #38bdf8;
       transform: scale(1.02);
+      margin-bottom: 15px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 10px;
     }
 
     .case p {
       margin: 5px 0;
       font-size: 14px;
+    .case h3 {
+      cursor: pointer;
+      color: var(--accent);
     }
 
     .tag {
@@ -91,16 +125,18 @@
       border-radius: 6px;
       font-size: 12px;
       margin-bottom: 8px;
+    .case-content {
+      display: none;
+      margin-top: 8px;
     }
 
     footer {
       text-align: center;
       padding: 20px;
       color: #94a3b8;
+    .case.active .case-content {
+      display: block;
     }
-    h1, h2 { margin:0 0 10px; }
-    .case { margin-bottom:18px; padding-bottom:10px; border-bottom:1px solid #eee; }
-    .case:last-child { border-bottom:none; }
 
     a {
       color: #38bdf8;
@@ -112,25 +148,29 @@
 
 <body>
 
-<div class="container">
-
-  <div class="card">
 <header>
   <div class="container">
     <h1>IT Support / Technician Portfolio</h1>
-    <p>Focused on troubleshooting, system reliability, and infrastructure support.</p>
   </div>
+<header class="container">
+  <h2>My IT Portfolio</h2>
+  <button onclick="toggleDark()">🌙 Toggle Mode</button>
 </header>
 
 <div class="container">
 
   <div class="card">
+    <h1>IT Support / Technician Portfolio</h1>
+    <p>Focused on troubleshooting, system reliability, and infrastructure support.</p>
+  </div>
+
+  <div class="card">
     <h2>About Me</h2>
     <p>
       I specialize in diagnosing hardware/software issues, maintaining network stability,
-      and implementing solutions that reduce downtime.
       and implementing solutions that reduce downtime. Focused on real-world IT operations,
       automation, and system reliability.
+      and implementing solutions that reduce downtime.
     </p>
   </div>
 
@@ -138,15 +178,14 @@
     <h2>Technical Skills</h2>
     <ul>
       <li>PC Repair & Troubleshooting</li>
-      <li>Windows Installation & Optimization</li>
       <li>Windows System Optimization</li>
+      <li>Windows Installation & Optimization</li>
       <li>Networking (DHCP, IP Configuration)</li>
       <li>Remote Support (AnyDesk, RustDesk)</li>
       <li>Automation (Batch Scripts, Robocopy)</li>
     </ul>
   </div>
 
-  <!-- ✅ REPLACED CASE STUDY SECTION -->
   <div class="card">
     <h2>Case Studies (Top 10 IT Incidents)</h2>
 
@@ -165,97 +204,6 @@
       <p><b>Solution:</b> Blocked domain and performed endpoint inspection.</p>
       <p><b>Result:</b> Prevented credential compromise.</p>
     </div>
-    <div class="case-grid">
-
-      <div class="case">
-        <span class="tag">Security</span>
-        <p><b>Starlink Piracy Investigation</b></p>
-        <p><b>Problem:</b> Torrent activity on shared IP</p>
-        <p><b>Diagnosis:</b> NAT log correlation</p>
-        <p><b>Solution:</b> DHCP + MAC tracing</p>
-        <p><b>Result:</b> Identified source devices</p>
-      </div>
-
-      <div class="case">
-        <span class="tag">Security</span>
-        <p><b>Phishing Detection</b></p>
-        <p><b>Problem:</b> Fake login page</p>
-        <p><b>Diagnosis:</b> Domain spoofing</p>
-        <p><b>Solution:</b> Blocked + scanned system</p>
-        <p><b>Result:</b> Prevented compromise</p>
-      </div>
-
-      <div class="case">
-        <span class="tag">Security</span>
-        <p><b>Ransomware Prevention</b></p>
-        <p><b>Problem:</b> No protection system</p>
-        <p><b>Diagnosis:</b> Weak backup structure</p>
-        <p><b>Solution:</b> Backup + access control</p>
-        <p><b>Result:</b> Recovery-ready system</p>
-      </div>
-
-      <div class="case">
-        <span class="tag">Security</span>
-        <p><b>USB Malware Control</b></p>
-        <p><b>Problem:</b> External device risk</p>
-        <p><b>Diagnosis:</b> Autorun enabled</p>
-        <p><b>Solution:</b> Group Policy restriction</p>
-        <p><b>Result:</b> Reduced infection risk</p>
-      </div>
-
-      <div class="case">
-        <span class="tag">Network</span>
-        <p><b>IP Conflict Issue</b></p>
-        <p><b>Problem:</b> Random disconnects</p>
-        <p><b>Diagnosis:</b> Duplicate IPs</p>
-        <p><b>Solution:</b> DHCP reconfiguration</p>
-        <p><b>Result:</b> Stable network</p>
-      </div>
-
-      <div class="case">
-        <span class="tag">Network</span>
-        <p><b>LAN Bottleneck</b></p>
-        <p><b>Problem:</b> Slow transfers</p>
-        <p><b>Diagnosis:</b> Cable + switch issue</p>
-        <p><b>Solution:</b> Replaced hardware</p>
-        <p><b>Result:</b> Improved speed</p>
-      </div>
-
-      <div class="case">
-        <span class="tag">System</span>
-        <p><b>Windows Boot Delay</b></p>
-        <p><b>Problem:</b> Stuck on update</p>
-        <p><b>Diagnosis:</b> Corrupt update</p>
-        <p><b>Solution:</b> Reset services</p>
-        <p><b>Result:</b> Normal boot</p>
-      </div>
-
-      <div class="case">
-        <span class="tag">System</span>
-        <p><b>Fast Startup Issue</b></p>
-        <p><b>Problem:</b> Hardware not detected</p>
-        <p><b>Diagnosis:</b> Incomplete boot state</p>
-        <p><b>Solution:</b> Disabled feature</p>
-        <p><b>Result:</b> Fixed detection</p>
-      </div>
-
-      <div class="case">
-        <span class="tag">Automation</span>
-        <p><b>Robocopy Backup</b></p>
-        <p><b>Problem:</b> No backup system</p>
-        <p><b>Diagnosis:</b> Manual process</p>
-        <p><b>Solution:</b> Automated script</p>
-        <p><b>Result:</b> Continuous backup</p>
-      </div>
-
-      <div class="case">
-        <span class="tag">Automation</span>
-        <p><b>Drive Mapping Script</b></p>
-        <p><b>Problem:</b> Manual mapping</p>
-        <p><b>Diagnosis:</b> No automation</p>
-        <p><b>Solution:</b> Login script</p>
-        <p><b>Result:</b> Improved efficiency</p>
-      </div>
 
     <div class="case">
       <p><b>3. Ransomware Prevention Strategy Design</b></p>
@@ -322,23 +270,31 @@
     </div>
 
   </div>
-
+  
   <div class="card">
     <h2>Projects</h2>
     <p><b>IT Equipment Tracking System</b> - Excel-based tracking with QR integration.</p>
     <p><b>Automated Backup Script</b> - Robocopy backup every 10 minutes.</p>
-    <p><b>IT Equipment Tracking System</b> - Excel-based QR tracking system</p>
-    <p><b>Automated Backup Script</b> - Robocopy scheduled system</p>
   </div>
 
   <div class="card">
-@@ -147,5 +244,9 @@ <h2>Contact</h2>
-
+<h2>Contact</h2>
+@@ -244,9 +246,16 @@ 
 </div>
 
 <footer>
   <p>© 2026 IT Portfolio | Built with GitHub Pages</p>
 </footer>
+<script>
+function toggleDark() {
+  document.body.classList.toggle("dark");
+}
+
+function toggleCase(element) {
+  const parent = element.parentElement;
+  parent.classList.toggle("active");
+}
+</script>
 
 </body>
 </html>
